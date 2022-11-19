@@ -5,11 +5,25 @@
     text-transform: uppercase;
     text-align: center;
 }
+
+
 .btn{
     font-size: 1.5rem;
+    transition: all 2s;
 }
+.btn:hover{
+    background-color: white;
+    color:black ;
+}
+
+
 .form-control{
     background-color: rgb(184, 184, 184);
     color: black;
     text-align: center;
+    transition: all 1s;
+}
+.form-control:hover{
+    border-color: black;
+    border-width: 3px;
 }
