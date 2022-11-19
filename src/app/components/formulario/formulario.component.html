@@ -1,29 +1,27 @@
 <div class="jumbotron mt-5">
-<h2 class="heading">Filter by country and category</h2>
-<div class="row">
-  <div class="col-lg-8 offset-lg-2">
-    <form>
-      <div class="form-group ">
-        <select name="category" class="form-control form-control-lg">
-          <option>General</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <select name="country" class="form-control form-control-lg">
-          <option>Mx</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5</option>
-        </select>
-        
-      </div>
-    </form>
-    <button class="btn btn-primary btn-block btn-lg">Search</button>
+  <h2 class="heading">Filter by country and category</h2>
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2">
+      <form (ngSubmit)="searchNew()">
+        <div class="form-group">
+          <select name="category" [(ngModel)]="categorySelect" class="form-control form-control-lg">
+            <option [value]="category.value" *ngFor="let category of category">
+              {{ category.name }}
+            </option>
+          </select>
+        </div>
+        <div class="form-group">
+          <select name="country" [(ngModel)]="countrySelect" class="form-control form-control-lg">
+            <option
+              [value]="countries.value"
+              *ngFor="let countries of countries"
+            >
+              {{ countries.name }}
+            </option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block btn-lg">Search</button>
+      </form>
+    </div>
   </div>
 </div>
-  </div>
