@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter , Output } from '@angular/core';
 
 @Component({
   selector: 'app-formulario',
@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./formulario.component.css']
 })
 export class FormularioComponent {
+  @Output() SelectedParams= new EventEmitter<any>()
 
   categorySelect="general"
   countrySelect="All"
@@ -24,7 +25,10 @@ countries:any[]=[
 
 
 searchNew(){
-  console.log(this.categorySelect)
-  console.log(this.countrySelect)
+  const params={
+    category:this.categorySelect,
+    country:this.countrySelect
+  }
+  this.SelectedParams.emit(params)
 }
 }
