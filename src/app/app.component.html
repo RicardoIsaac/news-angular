@@ -1,5 +1,5 @@
 <app-navbar [titulo]="'News search engine'"></app-navbar>
 <div class="container">
   <app-formulario (SelectedParams)="SearchNews($event)"></app-formulario>
-  <app-listado-noticias></app-listado-noticias>
+  <app-listado-noticias [listNews]="listNews"></app-listado-noticias>
 </div>

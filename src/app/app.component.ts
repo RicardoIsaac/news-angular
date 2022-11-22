@@ -7,6 +7,7 @@ import { NewsService } from './services/noticias.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  listNews:any[]=[];
 
   constructor(private newsService:NewsService){
 
@@ -17,6 +18,7 @@ export class AppComponent {
     console.log(params)
     this.newsService.getNews(params).subscribe(data=>{
       console.log(data.articles)
-    })
+      this.listNews=data.articles
+    },error=>{console.log(error)})
   }
 }
